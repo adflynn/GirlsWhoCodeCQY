@@ -1,0 +1,24 @@
+body {
+    background-color: #DEA5A4;
+    font-family: arial;
+  }
+
+.menu {
+    padding: 10px;
+}
+
+.section {
+    font-size: 10px;
+}
+
+button {
+   width: 100px;
+}
+
+.info {
+  text-align: center;
+  margin: 10px;
+  border: solid;
+  border-width: medium;
+  border-color: white;
+}
