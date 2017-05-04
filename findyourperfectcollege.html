@@ -2,6 +2,7 @@
     <!--<link rel="stylesheet" type="text/css" href="externalfile:drive-f8697450682b602e5f24c42dbe735e8934dd21ff/root/findyourperfectcollege.css"/>-->
     <link rel="stylesheet" type="text/css" href="css/master.css"/>
     <link rel="stylesheet" type="text/css" href="css/findyourperfectcollege.css"/>
+    <script type="text/javascript" src="js/findyourperfectcollege.js"></script>
     <title>College Classified</title>
 </head>
 
@@ -32,9 +33,37 @@
 </div>
 
 <div class="info">
-    Quizzes for finding colleges
+    Quizzes for finding colleges <br><br>
     <!-- Let's add 4 quiz links here, The 'link' will be a picture with text over it -->
     <!-- Remember we will have to create the 4 quiz pages we link to -->
+  <form id="quiz-1" onsubmit="submitQuiz()">
+    <div class="question">
+      What are you interested in studying? <br>
+      <input type="checkbox" name="major" value="medicine"> Medicine <br>
+      <input type="checkbox" name="major" value="business"> Business <br>
+      <input type="checkbox" name="major" value="humanities"> Humanities <br>
+      <input type="checkbox" name="major" value="sciences"> Sciences <br>
+      <input type="checkbox" name="major" value="engineering"> Engineering <br>
+      <input type="checkbox" name="major" value="other"> Other <br>
+    </div> <br>
+    <div class="question">
+      Where do you want to go for college? <br>
+      <input type="radio" name="region" value="northeast-us"> North East U.S. </br>
+      <input type="radio" name="region" value="southeast-us"> South East U.S. </br>
+      <input type="radio" name="region" value="midwest-us"> Mid West U.S. </br>
+      <input type="radio" name="region" value="west-us"> West Coast U.S. </br>
+      <input type="radio" name="region" value="abroad"> Abroad </br>
+    </div> <br>
+    <div class="question">
+      What is your undergraduate GPA? <br>
+      <input type="text" name="gpa" id="gpa">
+    </div><br>
+    <div class="question">
+      What range of annual tuition are you looking for? <br>
+      $0<input type="range" name="tuition" min="0" max="100000">$100,000
+    </div>
+    <input type="submit">
+  </form>
 </div>
 
 </body>
