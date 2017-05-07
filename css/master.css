@@ -1,5 +1,6 @@
 body {
     background-color: #DEA5A4;
+    font-family: "Proxima Nova", Arial, sans-serif;
 }
 
 .menu {
@@ -23,5 +24,5 @@ a:hover {
 }
 
 .info {
-
+  padding: 30px;
 }
