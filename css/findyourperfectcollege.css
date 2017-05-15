@@ -1,0 +1,13 @@
+/* TODO : make the initial quiz page (with the links to our 3 quizzes) look a little nicer with some styling */
+
+.options {
+    display: flex;
+}
+
+.item {
+    padding: 5px;
+}
+
+.pic {
+    width: 200px;
+}

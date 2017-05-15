@@ -3,6 +3,15 @@ body {
     font-family: "Proxima Nova", Arial, sans-serif;
 }
 
+.header {
+    display: flex;
+    justify-content: center;
+ }
+
+h1 {
+    margin: 0;
+}
+
 .menu {
     display: flex;
     justify-content: center;
@@ -11,16 +20,16 @@ body {
 .section {
     float: left;
     padding: 10px;
-    /* let's add a border to the link sections, to make this look more like a menu */
+    /* TODO : let's add a border to the link sections, to make this look more like a menu */
 }
 
 a {
     text-decoration: none;
-    /* let's change the color of the font of the links */
+    /* TODO : let's change the color of the font of the links (the menu text) */
 }
 
 a:hover {
-    /* let's change the color of the links when you hover over them */
+    /* TODO : let's change the color of the links when you hover over them, so we know they're clickable */
 }
 
 .info {
