@@ -1,37 +1,55 @@
-body {
-    background-color: #DEA5A4;
-    font-family: "Proxima Nova", Arial, sans-serif;
-}
+font-family: "Proxima Nova", Arial, sans-serif;
+    margin:10px;
+    padding: 10px;
 
-.header {
-    display: flex;
-    justify-content: center;
- }
 
-h1 {
-    margin: 0;
 }
 
 .menu {
     display: flex;
     justify-content: center;
+    background-color: white;
+    border:10px;
+    border:solid;
+    border-color:black;
+    
+
 }
 
 .section {
     float: left;
     padding: 10px;
-    /* TODO : let's add a border to the link sections, to make this look more like a menu */
+    /* let's add a border to the link sections, to make this look more like a menu */
+}
+.cqy{
+position:relative; right:-150;
+height:46%;
+width:40%;
+}
+
+.about-site, .about-team {
+font-size: 20px;
+margin-left:70px;
+margin-right:70px;
+}
+
+header{
+justify-content: center;
+color:purple;
+font-size:20px
+font-family:cursive;
 }
 
 a {
     text-decoration: none;
-    /* TODO : let's change the color of the font of the links (the menu text) */
+    /* let's change the color of the font of the links */
 }
 
 a:hover {
-    /* TODO : let's change the color of the links when you hover over them, so we know they're clickable */
+    /* let's change the color of the links when you hover over them */
 }
 
 .info {
   padding: 30px;
 }
+
