@@ -1,6 +1,8 @@
 body {
     background-color: #DEA5A4;
     font-family: "Proxima Nova", Arial, sans-serif;
+    margin: 10px;
+    padding: 10px;
 }
 
 .header {
@@ -20,6 +22,11 @@ h1 {
 .section {
     float: left;
     padding: 10px;
+    margin: 10px;
+    background-color: white;
+    border:10px;
+    border:solid;
+    border-color:black;
     /* TODO : let's add a border to the link sections, to make this look more like a menu */
 }
 
@@ -34,4 +41,16 @@ a:hover {
 
 .info {
   padding: 30px;
+}
+
+.cqy{
+  position:relative; right:-150;
+  height:46%;
+  width:40%;
+}
+
+.about-site, .about-team {
+  font-size: 20px;
+  margin-left:70px;
+  margin-right:70px;
 }
