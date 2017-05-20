@@ -1,19 +1,13 @@
-
-
-.menu {
-    padding: 10px;
-}
-
-button {
-    width: 100px;
-}
-
 .info {
     text-align: center;
     margin: 10px;
     border: solid;
     border-width: medium;
     border-color: white;
+}
+
+.checklist {
+    padding: 20px;
 }
 
 .g-calendar {

@@ -1,0 +1,108 @@
+<head>
+    <!--<link rel="stylesheet" type="text/css" href="externalfile:drive-f8697450682b602e5f24c42dbe735e8934dd21ff/root/findyourperfectcollege.css"/>-->
+    <link rel="stylesheet" type="text/css" href="css/master.css"/>
+    <link rel="stylesheet" type="text/css" href="css/findyourperfectcollege.css"/>
+    <script type="text/javascript" src="js/findyourperfectcollege.js"></script>
+    <title>College Classified</title>
+</head>
+
+<body>
+
+<div class="header">
+    <img src="./resources/logo.png"/>
+</div>
+
+<div class="menu">
+
+    <div class="home section">
+        <h2><a href=./index.html>Home</a></h2>
+    </div>
+
+    <div class="scholarship section">
+        <h2><a href="./scholarships.html">Scholarships Info</a></h2>
+    </div>
+
+    <div class="search section">
+        <h2><a href="./searchcolleges.html">Search Colleges</a></h2>
+    </div>
+
+    <div class="quiz section">
+        <h2><a href="./findyourperfectcollege.html">Find Your Perfect College Fit!</h2>
+    </div>
+
+    <div class="calendar section">
+        <h2><a href="./deadlines.html">Deadlines Calendar</a></h2>
+    </div>
+
+</div>
+
+<div class="info">
+
+    <!-- TODO : add more questions to this quiz!
+    remember to use a mix of
+    checkboxes
+    text boxes
+    radio buttons
+    dropdowns
+    range
+    as input types!
+    (read up on w3schools about different input types if you need some help) -->
+
+    <div class="easy">
+        <h1>Easy College Finder</h1> <br><br>
+        <form id="quiz-1" onsubmit="submitEasyQuiz()">
+
+            <div class="question">
+                What are you interested in studying? <br>
+                <div class="options">
+                    <div class="item">
+                        <img class="pic" src="./resources/medicine.png"/><br>
+                        <input type="checkbox" name="major" value="medicine"> Medicine <br>
+                    </div>
+                    <div class="item">
+                        <img class="pic" src="./resources/business.png"/><br>
+                        <input type="checkbox" name="major" value="business"> Business <br>
+                    </div>
+                    <div class="item">
+                        <img class="pic" src="./resources/humanities.png"/><br>
+                        <input type="checkbox" name="major" value="humanities"> Humanities <br>
+                    </div>
+                    <div class="item">
+                        <img class="pic" src="./resources/science.png"/><br>
+                        <input type="checkbox" name="major" value="sciences"> Sciences <br>
+                    </div>
+                    <div class="item">
+                        <img class="pic" src="./resources/engineering.png"/><br>
+                        <input type="checkbox" name="major" value="engineering"> Engineering <br>
+                    </div>
+                    <div class="item">
+                        <img class="pic" src="./resources/other.png"/><br>
+                        <input type="checkbox" name="major" value="other"> Other <br>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="question">
+                Where do you want to go for college? <br>
+                <input type="radio" name="region" value="northeast-us"> North East U.S. </br>
+                <input type="radio" name="region" value="southeast-us"> South East U.S. </br>
+                <input type="radio" name="region" value="midwest-us"> Mid West U.S. </br>
+                <input type="radio" name="region" value="west-us"> West Coast U.S. </br>
+                <input type="radio" name="region" value="abroad"> Abroad </br>
+            </div>
+            <br>
+            <div class="question">
+                What is your undergraduate GPA? <br>
+                <input type="text" name="gpa" id="gpa">
+            </div>
+            <br>
+            <div class="question">
+                What range of annual tuition are you looking for? <br>
+                $0<input type="range" name="tuition" min="0" max="100000">$100,000
+            </div>
+            <input type="submit">
+        </form>
+    </div>
+</div>
+
+</body>
