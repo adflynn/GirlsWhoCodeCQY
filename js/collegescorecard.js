@@ -7,7 +7,7 @@ var queryCollegeScorecardApi = function(data){
     type: 'GET',
     data: data,
     dataType: 'json',
-    error: function(err) { alert(err.status); }
+    error: function(err) { console.log(err); console.log(this.url);}
   });
 };
 
@@ -37,7 +37,8 @@ var collegeScorecardResult = function(raw){
 var constructCollegeScorecardSearch = function(name, city, state, region, degree_urbanization, min_admission_rate, max_admission_rate, women_only, sat_score, has_medicine_degree, has_business_degree, has_humanities_degree, has_sciences_degree, has_engineering_degree){
   var queryFilters = {};
   if(name){
-    $.extend(queryFilters,{'school.name': encodeURI(name)});
+    console.log(name);
+    $.extend(queryFilters,{'school.name': name});
   }
   if(city){
     $.extend(queryfilters,{'school.city': city});
@@ -76,6 +77,7 @@ var constructCollegeScorecardSearch = function(name, city, state, region, degree
   if(has_engineering_degree){
     $.extend(queryFilters,{'program.bachelors.engineering': 1})
   }
+  console.log(queryFilters);
   return queryFilters;
 };
 
