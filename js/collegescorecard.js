@@ -7,7 +7,7 @@ var queryCollegeScorecardApi = function(data){
     type: 'GET',
     data: data,
     dataType: 'json',
-    error: function(err) { console.log(err); console.log(this.url);}
+    error: function(err) { console.log(this.url);}
   });
 };
 
