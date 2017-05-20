@@ -1,13 +1,14 @@
 var queryCollegeScorecardApi = function(data){
   $.extend(data,{ api_key : 'jh4T7Ei9av4SziJYbiOoSk77dzRB67m9zUX0mE3P'});
   $.extend(data,{_per_page: 100});
-  $.extend(data,{ _fields : 'id,school.name,school.city,school.state,school.school_url,2014.admissions.admission_rate.overall,2014.admissions.act_scores.midpoint.cumulative,2014.admissions.sat_scores.average.overall,school.men_only,school.women_only,2014.student.size,2014.student.demographics.men,2014.student.demographics.women,2014.cost.tuition.in_state,2014.cost.tuition.out_of_state,2014.aid.median_debt.completers.overall,2014.earnings.10_yrs_after_entry.working_not_enrolled.mean_earnings'});
+  $.extend(data,{ fields : 'school.locale,id,school.name,school.city,school.state,school.school_url,2014.admissions.admission_rate.overall,2014.admissions.act_scores.midpoint.cumulative,2014.admissions.sat_scores.average.overall,school.men_only,school.women_only,2014.student.size,2014.student.demographics.men,2014.student.demographics.women,2014.cost.tuition.in_state,2014.cost.tuition.out_of_state,2014.aid.median_debt.completers.overall,2014.earnings.10_yrs_after_entry.working_not_enrolled.mean_earnings'});
+  console.log(data);
   return $.ajax({
     url: 'https://api.data.gov/ed/collegescorecard/v1/schools',
     type: 'GET',
     data: data,
     dataType: 'json',
-    error: function(err) { alert(err.status); }
+    error: function(err) { console.log(this.url); }
   });
 };
 
@@ -34,7 +35,7 @@ var collegeScorecardResult = function(raw){
   return result;
 }
 
-var constructCollegeScorecardSearch = function(name, city, state, region, degree_urbanization, min_admission_rate, max_admission_rate, women_only, sat_score, has_medicine_degree, has_business_degree, has_humanities_degree, has_sciences_degree, has_engineering_degree){
+var constructCollegeScorecardSearch = function(name, city, state, region, locale, min_admission_rate, max_admission_rate, women_only, sat_score, has_medicine_degree, has_business_degree, has_humanities_degree, has_sciences_degree, has_engineering_degree){
   var queryFilters = {};
   if(name){
     $.extend(queryFilters,{'school.name': encodeURI(name)});
@@ -52,41 +53,44 @@ var constructCollegeScorecardSearch = function(name, city, state, region, degree
     $.extend(queryFilters, {'school.women_only': women_only});
   }
   if(region){
-    $.extend(queryFilters,{'school.locale': region})
+    $.extend(queryFilters,{'school.region_id': region})
   }
-  if(degree_urbanization){
-    $.extend(queryFilters,{'school.degree_urbanization': degree_urbanization})
+  if(locale){
+    $.extend(queryFilters,{'school.locale': locale})
   }
   // the SAT score entered by the search should be >= the median SAT score
   if(sat_score){
-    $.extend(queryFilters,{'2014.admissions.sat_scores.average.overall': '..' + sat_score})
+    $.extend(queryFilters,{'2014.admissions.sat_scores.average.overall__range': '..' + sat_score})
   }
   if(has_medicine_degree){
-    $.extend(queryFilters,{'program.bachelors.biological': 1})
+    $.extend(queryFilters,{'academics.program.bachelors.biological': 1})
   }
   if(has_business_degree){
-    $.extend(queryFilters,{'program.bachelors.business_marketing': 1})
+    $.extend(queryFilters,{'academics.program.bachelors.business_marketing': 1})
   }
   if(has_humanities_degree){
-    $.extend(queryFilters,{'program.bachelors.humanities': 1})
+    $.extend(queryFilters,{'academics.program.bachelors.humanities': 1})
   }
   if(has_sciences_degree){
-    $.extend(queryFilters,{'program.bachelors.physical_science': 1})
+    $.extend(queryFilters,{'academics.program.bachelors.physical_science': 1})
   }
   if(has_engineering_degree){
-    $.extend(queryFilters,{'program.bachelors.engineering': 1})
+    $.extend(queryFilters,{'academics.program.bachelors.engineering': 1})
   }
+    console.log(queryFilters);
   return queryFilters;
 };
 
-var searchColleges = function(name, city, state, region, degree_urbanization, min_admission_rate, max_admission_rate, women_only, sat_score, has_medicine_degree, has_business_degree, has_humanities_degree, has_sciences_degree, has_engineering_degree){
-return queryCollegeScorecardApi(
-  constructCollegeScorecardSearch(name, city, state, region, degree_urbanization, min_admission_rate, max_admission_rate, women_only, sat_score, has_medicine_degree, has_business_degree, has_humanities_degree, has_sciences_degree, has_engineering_degree)
+var searchColleges = function(name, city, state, region, locale, min_admission_rate, max_admission_rate, women_only, sat_score, has_medicine_degree, has_business_degree, has_humanities_degree, has_sciences_degree, has_engineering_degree){
+  return queryCollegeScorecardApi(
+  constructCollegeScorecardSearch(name, city, state, region, locale, min_admission_rate, max_admission_rate, women_only, sat_score, has_medicine_degree, has_business_degree, has_humanities_degree, has_sciences_degree, has_engineering_degree)
 ).then(function(data){
+    console.log(this.url);
     var schools = [];
     $.each(data.results, function(i, val){
       schools.push(collegeScorecardResult(val));
     });
+    console.log(schools);
     return schools;
   });
 };
