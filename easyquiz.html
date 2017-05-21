@@ -2,6 +2,8 @@
     <!--<link rel="stylesheet" type="text/css" href="externalfile:drive-f8697450682b602e5f24c42dbe735e8934dd21ff/root/findyourperfectcollege.css"/>-->
     <link rel="stylesheet" type="text/css" href="css/master.css"/>
     <link rel="stylesheet" type="text/css" href="css/findyourperfectcollege.css"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/collegescorecard.js"></script>
     <script type="text/javascript" src="js/findyourperfectcollege.js"></script>
     <title>College Classified</title>
 </head>
@@ -37,25 +39,15 @@
 </div>
 
 <div class="info">
-
-    <!-- TODO : add more questions to this quiz!
-    remember to use a mix of
-    checkboxes
-    text boxes
-    radio buttons
-    dropdowns
-    range
-    as input types!
-    (read up on w3schools about different input types if you need some help) -->
-
     <div class="easy">
         <h1>Easy College Finder</h1> <br><br>
-        <form id="quiz-1" onsubmit="submitEasyQuiz()">
+        <form id="quiz-1">
 
             <div class="question">
-                What are you interested in studying? <br>
+                <b> What are you interested in studying? </b><br>
                 <div class="options">
                     <div class="item">
+                        <!-- change to be major values -->
                         <img class="pic" src="./resources/medicine.png"/><br>
                         <input type="checkbox" name="major" value="medicine"> Medicine <br>
                     </div>
@@ -77,32 +69,62 @@
                     </div>
                     <div class="item">
                         <img class="pic" src="./resources/other.png"/><br>
-                        <input type="checkbox" name="major" value="other"> Other <br>
+                        <input type="checkbox" name="major" value=""> Other <br>
                     </div>
                 </div>
             </div>
             <br>
             <div class="question">
-                Where do you want to go for college? <br>
-                <input type="radio" name="region" value="northeast-us"> North East U.S. </br>
-                <input type="radio" name="region" value="southeast-us"> South East U.S. </br>
-                <input type="radio" name="region" value="midwest-us"> Mid West U.S. </br>
-                <input type="radio" name="region" value="west-us"> West Coast U.S. </br>
-                <input type="radio" name="region" value="abroad"> Abroad </br>
+                <b>Do you want to go to an all-female college? </b> <br>
+                <input type="radio" name="gender" value="1"> Yes </br>
+                <input type="radio" name="gender" value="0"> No </br>
+                <input type="radio" name="gender" value=""> I'm open to it, but it isn't necessary </br>
             </div>
             <br>
             <div class="question">
-                What is your undergraduate GPA? <br>
-                <input type="text" name="gpa" id="gpa">
+                <b>Where do you want to go for college? </b> <br>
+                <input type="checkbox" name="region" value="0"> New England </br>
+                <input type="checkbox" name="region" value="2"> East Coast </br>
+                <input type="checkbox" name="region" value="3"> Great Lakes </br>
+                <input type="checkbox" name="region" value="4"> Central US </br>
+                <input type="checkbox" name="region" value="5"> Southeast </br>
+                <input type="checkbox" name="region" value="6"> Southwest </br>
+                <input type="checkbox" name="region" value="7"> Rocky Mountains </br>
+                <input type="checkbox" name="region" value="8"> Far West </br>
+                <input type="checkbox" name="region" value="9"> Outlying US States </br>
+                <input type="checkbox" name="region" value=""> Anywhere! </br>
             </div>
             <br>
             <div class="question">
-                What range of annual tuition are you looking for? <br>
-                $0<input type="range" name="tuition" min="0" max="100000">$100,000
+                <b> What size of city do you want to live in? </b> <br>
+                As Rural as Possible <input type="range" name="city-size" min="1" max="4" step="1"/> Big City!
             </div>
-            <input type="submit">
+            <br>
+            <div class="question">
+                <b> What is your SAT score? </b><br>
+                <input type="text" name="sat" id="sat">
+            </div>
+            <br>
+            <div class="question">
+                <b>How selective of a school are you looking for?</b><br>
+                <input type="radio" name="rate" value="0"> Accepts between 75% - 100% of Applicants </br>
+                <input type="radio" name="rate" value="1"> Accepts between 50% - 75% of Applicants </br>
+                <input type="radio" name="rate" value="2"> Accepts between 25% - 50% of Applicants </br>
+                <input type="radio" name="rate" value="3"> Accepts between 10% - 25% of Applicants </br>
+                <input type="radio" name="rate" value="4"> Accepts only 10% or fewer of Applicants </br>
+            </div>
+            <br>
+
+            <button onClick="submitEasyQuiz()">Submit</button>
         </form>
     </div>
+
+
+    <div class="result">
+
+        
+    </div>
+
 </div>
 
 </body>

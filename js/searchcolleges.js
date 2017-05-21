@@ -9,7 +9,7 @@
       trHtml += '<tr><td>'
               + school.name + '</td><td>'
               + '<a href=https://' + school.url + '>'+ school.url + '</a></td><td>'
-              + school.city + ', ' + school.state + '</td></tr>';
+              + school.city + ', ' + schoxol.state + '</td></tr>';
     });
   }).then(function(){
     $('#search-results').append(trHtml);

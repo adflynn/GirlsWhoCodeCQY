@@ -20,14 +20,14 @@ h1 {
 }
 
 .section {
+    font-size: 12px;
     float: left;
-    padding: 10px;
+    padding: 5px;
     margin: 10px;
     background-color: white;
-    border:10px;
+    border-radius: 5px;
     border:solid;
     border-color:black;
-    /* TODO : let's add a border to the link sections, to make this look more like a menu */
 }
 
 a {
