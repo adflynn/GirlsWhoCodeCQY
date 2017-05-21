@@ -38,20 +38,28 @@
 </div>
 
 <div class="info">
-    <h1>College Search</h1>
-    Some search info
-    <!-- TODO : Add an input field, where people can type in the name of the college they want -->
-    <!-- Add a 'search' button, when this is clicked it should call a function in the searchcolleges.js file -->
-    <!-- Remember to define ^ function in the searchcolleges.js file! -->
+    <h1 id='my-header'>College Search</h1>
+    <br>
+    Name:
+    <br>
+    <input type='text' name='name'>
+    <button onclick="executeSearch()">Search</button>
+    <br>
+    <br>
 
     <h1>Results</h1>
+    <br>
     <!-- TODO : Add additional output fields.  Any from the list returned in collegeScorecardResult are eligible -->
     <table id="search-results" border='1'>
-    <tr>
-        <th>Name</th>
-         <th>Website</th>
-         <th>City</th>
-    </tr>
+    <thead>
+      <tr>
+          <th>Name</th>
+           <th>Website</th>
+           <th>City</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
     </table>
 
 </div>
