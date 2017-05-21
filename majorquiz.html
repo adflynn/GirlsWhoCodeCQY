@@ -1,88 +1,100 @@
 <head>
-    <!--<link rel="stylesheet" type="text/css" href="externalfile:drive-f8697450682b602e5f24c42dbe735e8934dd21ff/root/findyourperfectcollege.css"/>-->
-    <link rel="stylesheet" type="text/css" href="css/master.css"/>
-    <link rel="stylesheet" type="text/css" href="css/findyourperfectcollege.css"/>
-    <script type="text/javascript" src="js/findyourperfectcollege.js"></script>
-    <title>College Classified</title>
+  <!--<link rel="stylesheet" type="text/css" href="externalfile:drive-f8697450682b602e5f24c42dbe735e8934dd21ff/root/findyourperfectcollege.css"/>-->
+  <link rel="stylesheet" type="text/css" href="css/master.css"/>
+  <link rel="stylesheet" type="text/css" href="css/findyourperfectcollege.css"/>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/findyourperfectcollege.js"></script>
+  <title>College Classified</title>
 </head>
 
 <body>
 
-<div class="header">
+  <div class="header">
     <img src="./resources/logo.png"/>
-</div>
+  </div>
 
-<div class="menu">
+  <div class="menu">
 
     <div class="home section">
-        <h2><a href=./index.html>Home</a></h2>
+      <h2><a href=./index.html>Home</a></h2>
     </div>
 
     <div class="scholarship section">
-        <h2><a href="./scholarships.html">Scholarships Info</a></h2>
+      <h2><a href="./scholarships.html">Scholarships Info</a></h2>
     </div>
 
     <div class="search section">
-        <h2><a href="./searchcolleges.html">Search Colleges</a></h2>
+      <h2><a href="./searchcolleges.html">Search Colleges</a></h2>
     </div>
 
     <div class="quiz section">
-        <h2><a href="./findyourperfectcollege.html">Find Your Perfect College Fit!</h2>
-    </div>
+      <h2><a href="./findyourperfectcollege.html">Find Your Perfect College Fit!</h2>
+      </div>
 
-    <div class="calendar section">
+      <div class="calendar section">
         <h2><a href="./deadlines.html">Deadlines Calendar</a></h2>
+      </div>
+
     </div>
 
-</div>
+    <div class="info">
+      <h1>Find the College Major That's Right For YOU</h1> <br><br>
+      <div class="question">
+        Do you like to be around other people or do you prefer to work on your own?<br>
+        <input type="radio" name="alone" value="withothers"> with others <br>
+        <input type="radio" name="alone" value="alone"> alone <br>
+      </div>
+      <br>
+      <div class="question">
+        Are you an artistic person? <br>
+        <input type="radio" name="artistic" value="yes"> yes <br>
+        <input type="radio" name="artistic" value="no"> no <br>
+      </div>
+      <br>
+      <div class="question"> What subject in high school did you enjoy the least? <br>
+        <input type="radio" name="leastfavsubject" value="English">English <br>
+        <input type="radio" name="leastfavsubject" value="History">History <br>
+        <input type="radio" name="leastfavsubject" value="Math">Math <br>
+        <input type="radio" name="leastfavsubject" value="Science">Science<br>
+        <input type="radio" name="leastfavsubject" value="Arts">Arts<br>
+        <input type="radio" name="leastfavsubject" value="Language">Foreign Language<br>
+        <input type="radio" name="leastfavsubject" value="None">I liked them all<br>
+      </div>
+      <br>
+      <div class="question"> What subject in high school did you enjoy the most? <br>
+        <input type="radio" name="mostfavsubject" value="English">English <br>
+        <input type="radio" name="mostfavsubject" value="History">History <br>
+        <input type="radio" name="mostfavsubject" value="Math">Math <br>
+        <input type="radio" name="mostfavsubject" value="Science">Science<br>
+        <input type="radio" name="mostfavsubject" value="Arts">Arts<br>
+        <input type="radio" name="mostfavsubject" value="Language">Foreign Language<br>
+        <input type="radio" name="mostfavsubject" value="None">I disliked them all<br>
+      </div>
+      <br>
+      <div class="question"> What are your main goals in life? <br>
+        <img class="pic" src="./resources/others.png"/><br>
+        <input type="radio" name="goal" value="Others">To Make Others Happy<br>
+        <img class="pic" src="./resources/money.png"/><br>
+        <input type="radio" name="goal" value="Money">To Earn a Lot of Money<br>
+        <img class="pic" src="./resources/learn.png"/><br>
+        <input type="radio" name="goal" value="Learn">To Learn More About the World<br>
+        <img class="pic" src="./resources/famous.png"/><br>
+        <input type="radio" name="goal" value="Famous">To Be Famous<br>
+        <img class="pic" src="./resources/educate.png"/><br>
+        <input type="radio" name="goal" value="Educate">To Educate<br>
+      </div>
+      <button onClick="submitMajorQuiz()">Submit</button>
+    </div>
 
-<div class="info">
-    <h1>Find the College Major That's Right For YOU</h1> <br><br>
-    <form id="quiz-1">
-        <div class="question">
-            Do you like to be around other people or do you prefer to work on your own?<br>
-            <input type="radio" name="alone" value="withothers"> with others <br>
-            <input type="radio" name="alone" value="alone"> alone <br>
-        </div>
-        <br>
-        <div class="question">
-            Are you an artistic person? <br>
-            <input type="radio" name="artistic" value="yes"> yes <br>
-            <input type="radio" name="artistic" value="no"> no <br>
-        </div>
-        <br>
-        <div class="question"> What subject in high school did you enjoy the least? <br>
-            <input type="radio" name="leastfavsubject" value="English">English <br>
-            <input type="radio" name="leastfavsubject" value="History">History <br>
-            <input type="radio" name="leastfavsubject" value="Math">Math <br>
-            <input type="radio" name="leastfavsubject" value="Science">Science<br>
-            <input type="radio" name="leastfavsubject" value="Language">Foreign Language<br>
-            <input type="radio" name="leastfavsubject" value="None">I liked them all<br>
-        </div>
-        <br>
-        <div class="question"> What subject in high school did you enjoy the most? <br>
-            <input type="radio" name="mostfavsubject" value="English">English <br>
-            <input type="radio" name="mostfavsubject" value="History">History <br>
-            <input type="radio" name="mostfavsubject" value="Math">Math <br>
-            <input type="radio" name="mostfavsubject" value="Science">Science<br>
-            <input type="radio" name="mostfavsubject" value="Language">Foreign Language<br>
-            <input type="radio" name="mostfavsubject" value="None">I disliked them all<br>
-        </div>
-        <br>
-        <div class="question"> What are your main goals in life? <br>
-          <img class="pic" src="./resources/others.png"/><br>
-            <input type="radio" name="goal" value="Others">To Make Others Happy<br>
-            <img class="pic" src="./resources/money.png"/><br>
-            <input type="radio" name="goal" value="Money">To Earn a Lot of Money<br>
-            <img class="pic" src="./resources/learn.png"/><br>
-            <input type="radio" name="goal" value="Learn">To Learn More About the World<br>
-            <img class="pic" src="./resources/famous.png"/><br>
-            <input type="radio" name="goal" value="Famous">To Be Famous<br>
-            <img class="pic" src="./resources/educate.png"/><br>
-            <input type="radio" name="goal" value="Educate">To Educate<br>
-        </div>
-        <button onClick="submitMajorQuiz()">Submit</button>
-    </form>
-</div>
+    <div class="result">
+        <h3> Here are your results!! </h3>
+        <table id="quiz-results">
+            <tbody>
+              <tr>
+                <td> HERE ARE YOU RESULTS </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
 
-</body>
+  </body>
