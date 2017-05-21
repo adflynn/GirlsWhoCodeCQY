@@ -1,7 +1,7 @@
 var submitMajorQuiz = function () {
+
   // TODO : think about what this function should do!
   // model it after the submitEasyQuiz function, reading in the values you select on the quiz page
-
   var total = 0;
 
   var peopleList = document.getElementsByName("alone");
@@ -101,21 +101,21 @@ var submitMajorQuiz = function () {
   var major = '';
   console.log(total);
   if ( total == 0 || total == 1 || total == 2) {
-      major  = 'Arts or Drama';
+    major  = 'Arts or Drama';
   } else if ( total == 3 || total == 4 ) {
-      major = 'English or Linguistics';
+    major = 'English or Linguistics';
   } else if ( total == 5 || total == 6 ) {
-      major = 'Teaching';
+    major = 'Teaching';
   } else if ( total == 7 || total == 8 ) {
-      major = 'History';
+    major = 'History';
   } else if ( total == 9 || total == 10 ) {
-      major = 'Business';
+    major = 'Business';
   } else if ( total == 11 || total == 12 ) {
-      major = 'Psychology or Sociology';
+    major = 'Psychology or Sociology';
   } else if ( total == 13 || total == 14 ) {
-      major = 'Pre-Med or Nursing';
+    major = 'Pre-Med or Nursing';
   } else if ( total == 15 || total == 16 ) {
-      major = 'Sciences : Chemistry/Biology/Engineering';
+    major = 'Sciences : Chemistry/Biology/Engineering';
   }
 
   console.log(major);
@@ -131,19 +131,36 @@ var submitMajorQuiz = function () {
   resultTable.style.visibility = 'visible';
 };
 
+
 var submitFoodQuiz = function () {
   // TODO : think about what this function should do!
   // model it after the submitEasyQuiz function, reading in the values you select on the quiz page
 
-  // var trHtml = '<tr>'
-  // + '<td>' + THE BEST MAJOR FOR YOU IS : + '</td>'
-  // + '<td>' + school.url + '</a></td>'
-  // + '</tr>';
-  //
-  // $( '#quiz-results tbody tr' ).remove();
-  // $( '#quiz-results tbody' ).append( trHtml );
-}
+  var foodQuizResults = document.getElementsByName("appetizer");
+  var appetizerValue = -1;
+  $.each(foodQuizResults,function(i,result){
+    if (result.checked){
+      appetizerValue = result.value;
+    }
+  });
 
+  var trHtml = '';
+  searchColleges( null, null, null, appetizerValue, null, null, null, null, null, null, null, null, null, null )
+  .then( function ( schools ) {
+    var school = schools[0];
+    trHtml += '<tr>'
+    + '<td>' + school.name + '</td>'
+    + '<td><a href=https://' + school.url + '>' + school.url + '</a></td>'
+    + '<td>' + school.city + ', ' + school.state + '</td>'
+    + '</tr>';
+  } ).then( function () {
+    var resultTable = document.getElementsByClassName('result')[0];
+    resultTable.style.visibility = 'visible';
+
+    $( '#quiz-results tbody tr' ).remove();
+    $( '#quiz-results tbody' ).append( trHtml );
+  } );
+};
 
 var submitEasyQuiz = function () {
 
