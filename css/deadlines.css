@@ -8,6 +8,10 @@
 
 .checklist {
     padding: 20px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
 }
 
 .g-calendar {
