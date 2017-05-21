@@ -1,7 +1,18 @@
-.scholarships {
+.scholarship {
     text-align: center;
     margin: 10px;
     border: solid;
     border-width: medium;
     border-color: pink;
+}
+
+.sites {
+  display: flex;
+  justify-content: center;
+}
+
+.site {
+  height: 70px;
+  height : 70px;
+  padding: 50px;;
 }
