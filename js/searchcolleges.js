@@ -17,8 +17,8 @@ var executeSearch = function () {
         } ).then( function () {
           var resultTable = document.getElementsByClassName('result')[0];
           resultTable.style.visibility = 'visible';
-          
-          $( '#search-results tbody tr' ).remove();
-          $( '#search-results tbody' ).append( trHtml );
+
+          $( '#quiz-results tbody tr' ).remove();
+          $( '#quiz-results tbody' ).append( trHtml );
     } );
 };
