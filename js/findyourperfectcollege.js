@@ -25,16 +25,23 @@ var submitFoodQuiz = function () {
     // TODO : think about what this function should do!
     // model it after the submitEasyQuiz function, reading in the values you select on the quiz page
 
+    var foodQuizResults = document.getElementsByName("appetizer");
+    var appetizerValue = -1;
+    $.each(foodQuizResults,function(i,result){
+      if (result.checked){
+        appetizerValue = result.value;
+      }
+    });
+
     var trHtml = '';
-    searchColleges( null, null, null, region, null, min_admission_rate, max_admission_rate, women_only, sat_score, has_medicine_degree, has_business_degree, has_humanities_degree, has_sciences_degree, has_engineering_degree )
+    searchColleges( null, null, null, appetizerValue, null, null, null, null, null, null, null, null, null, null )
         .then( function ( schools ) {
-            $.each( schools, function ( i, school ) {
-                trHtml += '<tr>'
-                    + '<td>' + school.name + '</td>'
-                    + '<td><a href=https://' + school.url + '>' + school.url + '</a></td>'
-                    + '<td>' + school.city + ', ' + school.state + '</td>'
-                    + '</tr>';
-            } );
+            var school = schools[0];
+            trHtml += '<tr>'
+                + '<td>' + school.name + '</td>'
+                + '<td><a href=https://' + school.url + '>' + school.url + '</a></td>'
+                + '<td>' + school.city + ', ' + school.state + '</td>'
+                + '</tr>';
         } ).then( function () {
         var resultTable = document.getElementsByClassName('result')[0];
         resultTable.style.visibility = 'visible';
