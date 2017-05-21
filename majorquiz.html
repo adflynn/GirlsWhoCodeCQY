@@ -50,7 +50,6 @@
             <input type="radio" name="artistic" value="yes"> yes <br>
             <input type="radio" name="artistic" value="no"> no <br>
         </div>
-
         <br>
         <div class="question"> What subject in high school did you enjoy the least? <br>
             <input type="radio" name="leastfavsubject" value="English">English <br>
@@ -61,17 +60,27 @@
             <input type="radio" name="leastfavsubject" value="None">I liked them all<br>
         </div>
         <br>
-        <div class="question"> What are your main goals in life? <br>
-            <input type="checkbox" name="goal" value="Others">To Make Others Happy<br>
-            <input type="checkbox" name="goal" value="Money">To Earn a Lot of Money<br>
-            <input type="checkbox" name="goal" value="Learn">To Learn More About the World<br>
-            <input type="checkbox" name="goal" value="Famous">To Be Famous<br>
-            <input type="checkbox" name="goal" value="Educate">To Educate<br>
-
+        <div class="question"> What subject in high school did you enjoy the most? <br>
+            <input type="radio" name="mostfavsubject" value="English">English <br>
+            <input type="radio" name="mostfavsubject" value="History">History <br>
+            <input type="radio" name="mostfavsubject" value="Math">Math <br>
+            <input type="radio" name="mostfavsubject" value="Science">Science<br>
+            <input type="radio" name="mostfavsubject" value="Language">Foreign Language<br>
+            <input type="radio" name="mostfavsubject" value="None">I disliked them all<br>
         </div>
-        <!-- TODO : add in more questions-->
-        <!-- think about using radio buttons, checkboxes, and drop down menus!-->
-        <!-- remember to give all responses a value & properly handle them in js ! -->
+        <br>
+        <div class="question"> What are your main goals in life? <br>
+          <img class="pic" src="./resources/others.png"/><br>
+            <input type="radio" name="goal" value="Others">To Make Others Happy<br>
+            <img class="pic" src="./resources/money.png"/><br>
+            <input type="radio" name="goal" value="Money">To Earn a Lot of Money<br>
+            <img class="pic" src="./resources/learn.png"/><br>
+            <input type="radio" name="goal" value="Learn">To Learn More About the World<br>
+            <img class="pic" src="./resources/famous.png"/><br>
+            <input type="radio" name="goal" value="Famous">To Be Famous<br>
+            <img class="pic" src="./resources/educate.png"/><br>
+            <input type="radio" name="goal" value="Educate">To Educate<br>
+        </div>
         <button onClick="submitMajorQuiz()">Submit</button>
     </form>
 </div>
