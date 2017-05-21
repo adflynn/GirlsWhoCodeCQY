@@ -54,3 +54,33 @@ a:hover {
   margin-left:70px;
   margin-right:70px;
 }
+
+.result {
+  visibility: hidden;
+}
+
+.result h3{
+  text-align: center;
+}
+
+#quiz-results {
+  background-color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#quiz-results td {
+  padding: 10px;
+  text-align: left;
+}
+
+#quiz-results th {
+  font-weight: bold;
+  color: #ffffff;
+  background-color: purple;
+  height: 30px;
+}
+
+#quiz-results tr:nth-child(even) {
+   background-color: #f2f2f2
+}
