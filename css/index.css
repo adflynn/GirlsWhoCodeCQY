@@ -1,1 +1,15 @@
 /* TODO : add some style to the front page! */
+.gwc {
+  height: 100px;
+}
+
+.cqy {
+  height: 100px;
+  width: 278px;
+}
+
+.logos {
+  margin-left: auto;
+  margin-right: auto;
+  width: 640px;
+}
