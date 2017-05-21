@@ -13,7 +13,7 @@ var submitMajorQuiz = function () {
                     + '</tr>';
             } );
         } ).then( function () {
-        var resultTable = document.getElementsByName('result')[0];
+        var resultTable = document.getElementsByClassName('result')[0];
         resultTable.style.visibility = 'visible';
 
         $( '#quiz-results tbody tr' ).remove();
@@ -36,7 +36,7 @@ var submitFoodQuiz = function () {
                     + '</tr>';
             } );
         } ).then( function () {
-        var resultTable = document.getElementsByName('result')[0];
+        var resultTable = document.getElementsByClassName('result')[0];
         resultTable.style.visibility = 'visible';
 
         $( '#quiz-results tbody tr' ).remove();
@@ -153,7 +153,7 @@ var submitEasyQuiz = function () {
                     + '</tr>';
             } );
         } ).then( function () {
-            var resultTable = document.getElementsByName('result')[0];
+            var resultTable = document.getElementsByClassName('result')[0];
             resultTable.style.visibility = 'visible';
 
             $( '#quiz-results tbody tr' ).remove();

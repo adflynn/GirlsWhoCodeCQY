@@ -15,7 +15,10 @@ var executeSearch = function () {
                     + '</tr>';
             } );
         } ).then( function () {
-        $( '#search-results tbody tr' ).remove();
-        $( '#search-results tbody' ).append( trHtml );
+          var resultTable = document.getElementsByClassName('result')[0];
+          resultTable.style.visibility = 'visible';
+          
+          $( '#search-results tbody tr' ).remove();
+          $( '#search-results tbody' ).append( trHtml );
     } );
 };

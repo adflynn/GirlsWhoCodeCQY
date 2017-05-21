@@ -41,7 +41,7 @@ var collegeScorecardResult = function ( raw ) {
 var constructCollegeScorecardSearch = function ( name, city, state, region, locale, min_admission_rate, max_admission_rate, women_only, sat_score, has_medicine_degree, has_business_degree, has_humanities_degree, has_sciences_degree, has_engineering_degree ) {
     var queryFilters = {};
     if ( name ) {
-        $.extend( queryFilters, {'school.name': encodeURI( name )} );
+        $.extend( queryFilters, {'school.name': name } );
     }
     if ( city ) {
         $.extend( queryfilters, {'school.city': city} );
