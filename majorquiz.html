@@ -38,7 +38,7 @@
 
 <div class="info">
     <h1>Find the College Major That's Right For YOU</h1> <br><br>
-    <form id="quiz-1" onsubmit="submitMajorQuiz()">
+    <form id="quiz-1">
         <div class="question">
             Do you like to be around other people or do you prefer to work on your own?<br>
             <input type="radio" name="alone" value="withothers"> with others <br>
@@ -53,25 +53,26 @@
 
         <br>
         <div class="question"> What subject in high school did you enjoy the least? <br>
-          <input type="radio" name="leastfavsubject" value="English">English <br>
-          <input type="radio" name="leastfavsubject" value="History">History <br>
-          <input type="radio" name="leastfavsubject" value="Math">Math <br>
-          <input type="radio" name="leastfavsubject" value="Science">Science<br>
-          <input type="radio" name="leastfavsubject" value="Language">Foreign Language<br>
-          <input type="radio" name="leastfavsubject" value="None">I liked them all<br>
+            <input type="radio" name="leastfavsubject" value="English">English <br>
+            <input type="radio" name="leastfavsubject" value="History">History <br>
+            <input type="radio" name="leastfavsubject" value="Math">Math <br>
+            <input type="radio" name="leastfavsubject" value="Science">Science<br>
+            <input type="radio" name="leastfavsubject" value="Language">Foreign Language<br>
+            <input type="radio" name="leastfavsubject" value="None">I liked them all<br>
         </div>
-<br>
-<div class="question"> What are your main goals in life? <br>
-  <input type="checkbox" name="goal" value=Others>To Make Others Happy<br>
-  <input type="checkbox" name="goal" value=Money>To Earn a Lot of Money<br>
-  <input type="checkbox" name="goal" value=Leaern>To Learn More About the World<br>
-  <input type="checkbox" name="goal" value=Famous>To Be Famous<br>
-  <input type="checkbox" name="goal" value=Educate>To Educate<br>
+        <br>
+        <div class="question"> What are your main goals in life? <br>
+            <input type="checkbox" name="goal" value="Others">To Make Others Happy<br>
+            <input type="checkbox" name="goal" value="Money">To Earn a Lot of Money<br>
+            <input type="checkbox" name="goal" value="Learn">To Learn More About the World<br>
+            <input type="checkbox" name="goal" value="Famous">To Be Famous<br>
+            <input type="checkbox" name="goal" value="Educate">To Educate<br>
 
+        </div>
         <!-- TODO : add in more questions-->
         <!-- think about using radio buttons, checkboxes, and drop down menus!-->
         <!-- remember to give all responses a value & properly handle them in js ! -->
-        <input type="submit">
+        <button onClick="submitMajorQuiz()">Submit</button>
     </form>
 </div>
 

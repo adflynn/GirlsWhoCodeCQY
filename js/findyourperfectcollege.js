@@ -1,11 +1,47 @@
 var submitMajorQuiz = function () {
+    // TODO : think about what this function should do!
+    // model it after the submitEasyQuiz function, reading in the values you select on the quiz page
 
+    var trHtml = '';
+    searchColleges( null, null, null, region, null, min_admission_rate, max_admission_rate, women_only, sat_score, has_medicine_degree, has_business_degree, has_humanities_degree, has_sciences_degree, has_engineering_degree )
+        .then( function ( schools ) {
+            $.each( schools, function ( i, school ) {
+                trHtml += '<tr>'
+                    + '<td>' + school.name + '</td>'
+                    + '<td><a href=https://' + school.url + '>' + school.url + '</a></td>'
+                    + '<td>' + school.city + ', ' + school.state + '</td>'
+                    + '</tr>';
+            } );
+        } ).then( function () {
+        var resultTable = document.getElementsByName('result')[0];
+        resultTable.style.visibility = 'visible';
 
+        $( '#quiz-results tbody tr' ).remove();
+        $( '#quiz-results tbody' ).append( trHtml );
+    } );
 };
 
 var submitFoodQuiz = function () {
     // TODO : think about what this function should do!
     // model it after the submitEasyQuiz function, reading in the values you select on the quiz page
+
+    var trHtml = '';
+    searchColleges( null, null, null, region, null, min_admission_rate, max_admission_rate, women_only, sat_score, has_medicine_degree, has_business_degree, has_humanities_degree, has_sciences_degree, has_engineering_degree )
+        .then( function ( schools ) {
+            $.each( schools, function ( i, school ) {
+                trHtml += '<tr>'
+                    + '<td>' + school.name + '</td>'
+                    + '<td><a href=https://' + school.url + '>' + school.url + '</a></td>'
+                    + '<td>' + school.city + ', ' + school.state + '</td>'
+                    + '</tr>';
+            } );
+        } ).then( function () {
+        var resultTable = document.getElementsByName('result')[0];
+        resultTable.style.visibility = 'visible';
+
+        $( '#quiz-results tbody tr' ).remove();
+        $( '#quiz-results tbody' ).append( trHtml );
+    } );
 };
 
 
@@ -16,20 +52,20 @@ var submitEasyQuiz = function () {
     for ( var i = 0; i < majorList.length; i++ ) {
         var possibleMajor = majorList[ i ];
 
-        if (possibleMajor.checked ) {
-            if (possibleMajor.value == 'medicine') {
+        if ( possibleMajor.checked ) {
+            if ( possibleMajor.value == 'medicine' ) {
                 has_medicine_degree = 1;
             }
-            if (possibleMajor.value == 'business') {
+            if ( possibleMajor.value == 'business' ) {
                 has_business_degree = 1;
             }
-            if (possibleMajor.value == 'humanities') {
+            if ( possibleMajor.value == 'humanities' ) {
                 has_humanities_degree = 1;
             }
-            if (possibleMajor.value == 'sciences') {
+            if ( possibleMajor.value == 'sciences' ) {
                 has_sciences_degree = 1;
             }
-            if (possibleMajor.value == 'engineering') {
+            if ( possibleMajor.value == 'engineering' ) {
                 has_engineering_degree = 1;
             }
             console.log( "one major is: " + possibleMajor.value );
@@ -52,11 +88,11 @@ var submitEasyQuiz = function () {
     for ( var i = 0; i < regionList.length; i++ ) {
         var possibleRegion = regionList[ i ];
         if ( possibleRegion.checked ) {
-            region.push(possibleRegion.value);
+            region.push( possibleRegion.value );
         }
     }
-    region = region.join(',');
-    console.log("region is " + region);
+    region = region.join( ',' );
+    console.log( "region is " + region );
 
     var city_size = document.getElementsByName( "city-size" )[ 0 ].value;
     var locale;
@@ -72,13 +108,13 @@ var submitEasyQuiz = function () {
     else if ( city_size == 4 ) {
         locale = '41,42,43'
     }
-    console.log("locale is " + locale);
+    console.log( "locale is " + locale );
 
     var sat_score = document.getElementsByName( "sat" )[ 0 ].value;
     console.log( "sat score is: " + sat_score );
 
     var max_admission_rate, min_admission_rate;
-    var admissionRateList = document.getElementsByName("rate");
+    var admissionRateList = document.getElementsByName( "rate" );
     for ( var i = 0; i < admissionRateList.length; i++ ) {
         var possibleRate = admissionRateList[ i ];
         if ( possibleRate.checked ) {
@@ -103,8 +139,25 @@ var submitEasyQuiz = function () {
             }
         }
     }
-    console.log('rate ' + max_admission_rate + min_admission_rate);
+    console.log( 'rate ' + max_admission_rate + ',' + min_admission_rate );
 
-    searchColleges(null, null, null, region, null, min_admission_rate, max_admission_rate, women_only, sat_score, has_medicine_degree, has_business_degree, has_humanities_degree, has_sciences_degree, has_engineering_degree)
+
+    var trHtml = '';
+    searchColleges( null, null, null, region, null, min_admission_rate, max_admission_rate, women_only, sat_score, has_medicine_degree, has_business_degree, has_humanities_degree, has_sciences_degree, has_engineering_degree )
+        .then( function ( schools ) {
+            $.each( schools, function ( i, school ) {
+                trHtml += '<tr>'
+                    + '<td>' + school.name + '</td>'
+                    + '<td><a href=https://' + school.url + '>' + school.url + '</a></td>'
+                    + '<td>' + school.city + ', ' + school.state + '</td>'
+                    + '</tr>';
+            } );
+        } ).then( function () {
+            var resultTable = document.getElementsByName('result')[0];
+            resultTable.style.visibility = 'visible';
+
+            $( '#quiz-results tbody tr' ).remove();
+            $( '#quiz-results tbody' ).append( trHtml );
+    } );
 
 };

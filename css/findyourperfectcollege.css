@@ -11,3 +11,7 @@
 .pic {
     width: 200px;
 }
+
+.result {
+    visibility: hidden;
+}

@@ -40,7 +40,7 @@
 
     <div class="easy">
         <h1>Find your College Fit based on your Food Tastes!</h1> <br><br>
-        <form id="food-quiz" onsubmit="submitFoodQuiz()">
+        <form id="food-quiz">
             <div class="question">
                 If you could only eat one appetizer for the rest of your life, what would it be?<br>
                 <div class="options">
@@ -76,9 +76,25 @@
                 <!-- remember to link correctly to images and give each answer choice a value-->
             </div>
 
-            <input type="submit">
+            <button onClick="submitEasyQuiz()">Submit</button>
         </form>
     </div>
+
+    <div class="result">
+        <h3> Here are your results!! </h3>
+        <table id="quiz-results" border='1'>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Website</th>
+                <th>City</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
 </div>
 
 </body>

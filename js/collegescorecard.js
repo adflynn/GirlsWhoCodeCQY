@@ -87,15 +87,13 @@ var searchColleges = function ( name, city, state, region, locale, min_admission
     return queryCollegeScorecardApi(
         constructCollegeScorecardSearch( name, city, state, region, locale, min_admission_rate, max_admission_rate, women_only, sat_score, has_medicine_degree, has_business_degree, has_humanities_degree, has_sciences_degree, has_engineering_degree )
     ).then( function ( data ) {
+        console.log( 'success' );
         console.log( this.url );
         var schools = [];
         $.each( data.results, function ( i, val ) {
             schools.push( collegeScorecardResult( val ) );
         } );
-        console.log( 'success' );
         console.log( schools );
         return schools;
-    }, function ( err ) {
-        console.log( 'error' );
-    } );
+    });
 };
